@@ -1,5 +1,5 @@
-import { Col, Divider, Row, Typography } from 'antd';
-import { PhoneOutlined } from '@ant-design/icons';
+import { Divider, Dropdown, Typography } from 'antd';
+import { CaretDownFilled, PhoneOutlined } from '@ant-design/icons';
 
 const SideBarInformation = [
   {
@@ -11,16 +11,16 @@ const SideBarInformation = [
     title: 'Thời trang Nam',
     subItem: [
       {
-        id: '1-0',
-        title: 'Sơ mi nam',
+        key: '1',
+        label: <div>Sơ mi nam</div>,
       },
       {
-        id: '1-1',
-        title: 'Quần âu nam',
+        key: '2',
+        label: <div>Quần âu nam</div>,
       },
       {
-        id: '1-2',
-        title: 'Quần short nam',
+        key: '3',
+        label: <div>Quần short nam</div>,
       },
     ],
   },
@@ -29,38 +29,16 @@ const SideBarInformation = [
     title: 'Sản phẩm',
     subItem: [
       {
-        id: '2-0',
-        title: 'Sản phẩm nổi bật',
-        subItem: [
-          {
-            id: '2-0-0',
-            title: 'Quần áo',
-          },
-          {
-            id: '2-0-1',
-            title: 'Phụ kiện',
-          },
-          {
-            id: '2-0-2',
-            title: 'Giầy dép',
-          },
-          {
-            id: '2-0-2',
-            title: 'Bé trai',
-          },
-          {
-            id: '2-0-2',
-            title: 'Bé gái',
-          },
-        ],
+        key: '1',
+        label: <div>Sản phẩm nổi bật</div>,
       },
       {
-        id: '2-1',
-        title: 'Sản phẩm hot trend',
+        key: '2',
+        label: <div>Sản phẩm hot trend</div>,
       },
       {
-        id: '2-2',
-        title: 'Sản phẩm khuyến mãi',
+        key: '3',
+        label: <div>Sản phẩm khuyến mãi</div>,
       },
     ],
   },
@@ -85,15 +63,19 @@ const SideBarInformation = [
 function NavBar() {
   return (
     <div className="h-16 flex px-40 items-center justify-between w-full bg-[#FFFAF0]">
-      <div className="flex gap-14 relative justify-between">
+      <div className="flex gap-12 relative justify-between">
         {SideBarInformation.map((item) => (
           <div key={item.id}>
-            <div className="text-base text-primary-green-color font-bold">{item.title}</div>
-            {item.subItem && (
-              <div className="flex flex-col bg-[#FFFAF0] absolute">
-                {item.subItem.map((i) => (
-                  <div key={i.id}>{i.title}</div>
-                ))}
+            {item.subItem ? (
+              <Dropdown menu={{ items: item.subItem }} placement="bottomLeft" arrow={{ pointAtCenter: true }}>
+                <div className="flex gap-1 text-primary-green-color font-bold hover:text-primary-yellow-color cursor-pointer">
+                  <div className="text-base ">{item.title}</div>
+                  <CaretDownFilled style={{ fontSize: '12px' }} />
+                </div>
+              </Dropdown>
+            ) : (
+              <div className="text-base text-primary-green-color hover:text-primary-yellow-color cursor-pointer font-bold">
+                {item.title}
               </div>
             )}
           </div>

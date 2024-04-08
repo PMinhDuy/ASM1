@@ -2,7 +2,7 @@ import { Button, Form, Input, Typography } from 'antd';
 
 const { Text } = Typography;
 
-function AuthenticationForm() {
+function SignInForm() {
   return (
     <div className="p-20 bg-[#f9f6f6] flex justify-center">
       <div className="w-1/4 bg-white py-4 px-8 rounded-lg flex justify-center space-y-2 flex-col">
@@ -37,4 +37,4 @@ function AuthenticationForm() {
   );
 }
 
-export default AuthenticationForm;
+export default SignInForm;

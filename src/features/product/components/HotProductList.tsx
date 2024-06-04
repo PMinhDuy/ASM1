@@ -1,7 +1,7 @@
 import { Col, Row } from 'antd';
+import Each from '../../../shared/components/common/Each';
 import ProductItem from './ProductItem';
 import { useGetProductsQuery } from '../../../generated/schemas';
-import Each from '../common/Each';
 
 export default function HotProductListComponent() {
   const { data } = useGetProductsQuery();

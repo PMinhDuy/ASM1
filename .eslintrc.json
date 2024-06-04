@@ -12,18 +12,37 @@
     "plugin:@typescript-eslint/strict",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
-        "jsx": true
-      },
-      "ecmaVersion": 12,
-      "sourceType": "module"
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "eslint-plugin-no-inline-styles", "react-hooks", "react", "simple-import-sort", "prettier"],
+  "plugins": [
+    "@typescript-eslint",
+    "eslint-plugin-no-inline-styles",
+    "react-hooks",
+    "react",
+    "simple-import-sort",
+    "prettier",
+    "@tanstack/query"
+  ],
   "rules": {
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+        "allowSeparatedGroups": false
+      }
+    ],
     "no-console": "warn",
     "no-new-object": "error",
     "no-loop-func": "error",
@@ -33,6 +52,9 @@
     "react/jsx-uses-react": 0,
     "react/react-in-jsx-scope": 0,
     "react/destructuring-assignment": "error",
+    "@tanstack/query/exhaustive-deps": "error",
+    "@tanstack/query/no-rest-destructuring": "warn",
+    "@tanstack/query/stable-query-client": "error",
     "@typescript-eslint/no-unnecessary-condition": "error",
     "@typescript-eslint/method-signature-style": "error",
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
@@ -50,31 +72,31 @@
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/naming-convention": [
-        "warn",
-        {
-          "selector": "variable",
-          "format": ["camelCase", "UPPER_CASE", "PascalCase"],
-          "leadingUnderscore": "allow"
-        },
-        {
-          "selector": "function",
-          "format": ["camelCase", "PascalCase"]
-        },
-        {
-          "selector": ["objectLiteralProperty", "typeProperty"],
-          "format": ["camelCase"]
-        },
-        {
-          "selector": ["enum", "enumMember", "class", "interface", "typeAlias"],
-          "format": ["PascalCase"]
-        },
-        {
-          "selector": "parameter",
-          "format": ["camelCase"],
-          "modifiers": ["unused"],
-          "leadingUnderscore": "require"
-        }
-      ],
+      "warn",
+      {
+        "selector": "variable",
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "function",
+        "format": ["camelCase", "PascalCase"]
+      },
+      {
+        "selector": ["objectLiteralProperty", "typeProperty"],
+        "format": ["camelCase"]
+      },
+      {
+        "selector": ["enum", "enumMember", "class", "interface", "typeAlias"],
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "parameter",
+        "format": ["camelCase"],
+        "modifiers": ["unused"],
+        "leadingUnderscore": "require"
+      }
+    ],
     "react/display-name": "off",
     "max-lines": ["error", 500],
     "prefer-destructuring": ["error"]
@@ -83,5 +105,5 @@
     "react": {
       "version": "detect"
     }
-}
+  }
 }

@@ -1,10 +1,10 @@
-import { Divider } from 'antd';
-import { useNavigate } from 'react-router-dom';
-import { UserOutlined, ShoppingOutlined, MessageFilled } from '@ant-design/icons';
 import { CHAT_HASH, PATH_URL } from '../../../ultils/constant';
-import ChatModal from '../../chats/ChatModal';
-import Logo from '../../common/Logo';
+import { MessageFilled, ShoppingOutlined, UserOutlined } from '@ant-design/icons';
+import ChatModal from '../../../../features/chats/ChatModal';
+import { Divider } from 'antd';
 import HeaderSearchInput from './HeaderSearchInput';
+import Logo from '../../common/Logo';
+import { useNavigate } from 'react-router-dom';
 
 export default function HeaderLayout() {
   const navigate = useNavigate();

@@ -1,11 +1,11 @@
+import { decrement, decrementByAmount, increment, incrementByAmount } from '../store/features/counter/counterSlice';
+import { emailSelector, passwordSelector, userNameSelector } from '../store/features/users/userSelector';
 import { useDispatch, useSelector } from 'react-redux';
-import counterSelector from '../store/features/counter/counterSelector';
 import { Button } from 'antd';
-import { decrement, increment, incrementByAmount, decrementByAmount } from '../store/features/counter/counterSlice';
-import { userNameSelector, emailSelector, passwordSelector } from '../store/features/users/userSelector';
 import { abilitySelector } from '../store/features/testRedux/testReduxSelector';
-import { useEffect } from 'react';
+import counterSelector from '../store/features/counter/counterSelector';
 import { testReduxAction } from '../store/features/testRedux/testReduxSlice';
+import { useEffect } from 'react';
 
 function TestRedux() {
   const count = useSelector(counterSelector);

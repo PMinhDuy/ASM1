@@ -1,12 +1,14 @@
-import FashionNewListComponent from '../shared/components/product/FashionNewList';
-import GoodPriceProductListComponent from '../shared/components/product/GoodPriceProductList';
-import HotProductListComponent from '../shared/components/product/HotProductList';
-import NewProductListComponent from '../shared/components/product/NewProductList';
-import SaleProductListComponent from '../shared/components/product/SaleProductList';
 import BannerLayout from '../shared/components/layout/BannerLayout';
 import ContentLayout from '../shared/components/layout/ContentLayout';
-import SectionBranch from '../shared/components/layout/SectionBranch';
+import FashionNewListComponent from '../features/product/components/FashionNewList';
+import GoodPriceProductListComponent from '../features/product/components/GoodPriceProductList';
+import HotProductListComponent from '../features/product/components/HotProductList';
 import MainLayout from '../shared/hocs/MainLayout';
+import NewProductListComponent from '../features/product/components/NewProductList';
+import SaleProductListComponent from '../features/product/components/SaleProductList';
+import SectionBranch from '../shared/components/layout/SectionBranch';
+
+import { useGetPosts } from '#/shared/hooks/useGetPosts';
 
 const CONTENT_LAYOUT = [
   {
@@ -62,11 +64,14 @@ const CONTENT_LAYOUT = [
 ];
 
 export default function Page() {
+  const { data } = useGetPosts();
+  console.log(data);
   return (
     <>
       <MainLayout>
         <>
           <BannerLayout />
+
           {CONTENT_LAYOUT.map((item, index) => (
             <ContentLayout
               key={index}

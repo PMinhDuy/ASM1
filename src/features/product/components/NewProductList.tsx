@@ -1,10 +1,11 @@
-import { Col, Row, Image } from 'antd';
-import { useGetProductsQuery } from '../../../generated/schemas';
+import { Col, Image, Row } from 'antd';
+import Each from '../../../shared/components/common/Each';
 import ProductItem from './ProductItem';
-import Each from '../common/Each';
+import { useGetProductsQuery } from '../../../generated/schemas';
 
-function GoodPriceProductListComponent() {
+export default function NewProductListComponent() {
   const { data } = useGetProductsQuery();
+
   return (
     <Row gutter={[24, 24]}>
       <Col span={10}>
@@ -12,7 +13,7 @@ function GoodPriceProductListComponent() {
           height={520}
           width={470}
           preview={false}
-          src="//bizweb.dktcdn.net/100/455/315/themes/894917/assets/banner_goodprice.png?1676282094225"
+          src="//bizweb.dktcdn.net/100/455/315/themes/894917/assets/banner_new.png?1676282094225"
           className="rounded-xl"
         />
       </Col>
@@ -31,5 +32,3 @@ function GoodPriceProductListComponent() {
     </Row>
   );
 }
-
-export default GoodPriceProductListComponent;

@@ -1,6 +1,6 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { createSlice } from '@reduxjs/toolkit';
 import type { TestReduxState } from '../../rootType';
+import { createSlice } from '@reduxjs/toolkit';
 
 export const testReduxSlice = createSlice({
   initialState: {

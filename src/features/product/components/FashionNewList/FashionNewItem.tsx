@@ -1,5 +1,5 @@
-import { Image, Typography, Divider } from 'antd';
-import { UserOutlined, FieldTimeOutlined } from '@ant-design/icons';
+import { Divider, Image, Typography } from 'antd';
+import { FieldTimeOutlined, UserOutlined } from '@ant-design/icons';
 
 interface FashionNewItemComponentProps {
   avatar: string;

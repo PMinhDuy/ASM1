@@ -1,24 +1,24 @@
-import { store } from './store';
+import { type store } from './store';
 
-export type CounterState = {
+export interface CounterState {
   counter: {
     value: number;
   };
-};
+}
 
-export type UserState = {
+export interface UserState {
   user: {
     email: string;
     userName: string;
     password: string;
   };
-};
+}
 
-export type TestReduxState = {
+export interface TestReduxState {
   testRedux: {
     ability: string;
     berry: string;
   };
-};
+}
 
 export type RootState = ReturnType<typeof store.getState>;

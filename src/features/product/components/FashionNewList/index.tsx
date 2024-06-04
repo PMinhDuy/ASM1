@@ -1,7 +1,7 @@
 import { Col, Row } from 'antd';
+import Each from '#/shared/components/common/Each';
 import FashionNewItemComponent from './FashionNewItem';
-import { useGetFashionNewsQuery } from '../../../../generated/schemas';
-import Each from '../../common/Each';
+import { useGetFashionNewsQuery } from '#/generated/schemas';
 
 function FashionNewListComponent() {
   const { data } = useGetFashionNewsQuery();

@@ -1,5 +1,5 @@
-import { Typography } from 'antd';
 import type { ReactNode } from 'react';
+import { Typography } from 'antd';
 
 const { Text } = Typography;
 

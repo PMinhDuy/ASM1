@@ -1,5 +1,5 @@
-import { Divider, Dropdown, Typography } from 'antd';
 import { CaretDownFilled, PhoneOutlined } from '@ant-design/icons';
+import { Divider, Dropdown, Typography } from 'antd';
 
 const SideBarInformation = [
   {

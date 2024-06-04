@@ -1,5 +1,5 @@
-import Each from '#/shared/components/common/Each';
 import ChatMessage from '.';
+import Each from '#/shared/components/common/Each';
 
 const MESSAGE = [
   {

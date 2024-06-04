@@ -1,4 +1,4 @@
-import { RootState } from '../../rootType';
+import { type RootState } from '../../rootType';
 
 const counterSelector = (state: RootState) => state.counter.value;
 

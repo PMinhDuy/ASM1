@@ -1,4 +1,4 @@
-import { Col, Row, Image } from 'antd';
+import { Col, Image, Row } from 'antd';
 
 function SectionBranch() {
   return (

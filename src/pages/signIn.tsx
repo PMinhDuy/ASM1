@@ -1,5 +1,5 @@
-import SignInForm from '../shared/components/authentication/SignInForm';
 import MainLayout from '../shared/hocs/MainLayout';
+import SignInForm from '../features/authentication/components/SignInForm';
 
 function SignIn() {
   return (

@@ -1,6 +1,6 @@
-import { type OptionType } from '#/shared/types/common';
-import { DownOutlined } from '@ant-design/icons';
 import { Divider, Select } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
+import { type OptionType } from '#/shared/types/common';
 import styled from 'styled-components';
 
 interface CustomSelectProps {

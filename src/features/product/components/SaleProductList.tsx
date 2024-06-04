@@ -1,7 +1,7 @@
-import { Col, Row, Image } from 'antd';
-import { useGetProductsQuery } from '../../../generated/schemas';
+import { Col, Image, Row } from 'antd';
+import Each from '../../../shared/components/common/Each';
 import ProductItem from './ProductItem';
-import Each from '../common/Each';
+import { useGetProductsQuery } from '../../../generated/schemas';
 
 function SaleProductListComponent() {
   const { data } = useGetProductsQuery({

@@ -1,6 +1,6 @@
-import { EnvironmentFilled, ClockCircleFilled, PhoneFilled } from '@ant-design/icons';
-import Logo from '../../common/Logo';
+import { ClockCircleFilled, EnvironmentFilled, PhoneFilled } from '@ant-design/icons';
 import FooterInformationContainer from './FooterInformationContainer';
+import Logo from '../../common/Logo';
 
 const SHOP_INFORMATION = [
   {

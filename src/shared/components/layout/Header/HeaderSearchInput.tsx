@@ -1,7 +1,7 @@
-import { type OptionType } from '#/shared/types/common';
-import { SearchOutlined } from '@ant-design/icons';
 import CustomSelect from '../../common/CustomSelect';
 import { Input } from 'antd';
+import { type OptionType } from '#/shared/types/common';
+import { SearchOutlined } from '@ant-design/icons';
 
 const CLOTHES_TYPE_OPTIONS: OptionType[] = [
   {

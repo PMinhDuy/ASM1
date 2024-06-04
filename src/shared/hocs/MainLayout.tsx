@@ -1,8 +1,8 @@
-import type { ReactNode } from 'react';
 import Footer from '../components/layout/Footer';
 import HeaderLayout from '../components/layout/Header';
-import SectionGetInformation from '../components/layout/SectionGetInformation';
 import Navbar from '../components/layout/Navbar';
+import type { ReactNode } from 'react';
+import SectionGetInformation from '../components/layout/SectionGetInformation';
 
 interface MainLayoutProps {
   children: ReactNode;

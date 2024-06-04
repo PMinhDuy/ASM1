@@ -1,10 +1,10 @@
-import Page from './pages';
-import { useRoutes } from 'react-router-dom';
-import TestRedux from './pages/testRedux';
-import { PATH_URL } from './shared/ultils/constant';
-import SignIn from './pages/signIn';
 import NotFoundPage from './pages/[...all]';
+import { PATH_URL } from './shared/ultils/constant';
+import Page from './pages';
+import SignIn from './pages/signIn';
 import SignUp from './pages/signUp';
+import TestRedux from './pages/testRedux';
+import { useRoutes } from 'react-router-dom';
 
 function App() {
   const routes = [

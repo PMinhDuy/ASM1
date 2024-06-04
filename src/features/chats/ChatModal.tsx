@@ -1,9 +1,9 @@
 import { CHAT_HASH } from '#/shared/ultils/constant';
+import ChatBody from './ChatBody';
+import ChatFooter from './ChatFooter';
+import ChatHeader from './ChatHeader';
 import { Drawer } from 'antd';
 import { useLocation } from 'react-router-dom';
-import ChatHeader from './ChatHeader';
-import ChatFooter from './ChatFooter';
-import ChatBody from './ChatBody';
 
 function ChatModal() {
   const { hash } = useLocation();

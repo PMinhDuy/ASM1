@@ -5,6 +5,6 @@ interface EachProps<T> {
   arrayOf: T[];
 }
 
-export const Each = <T,>({ render, arrayOf }: EachProps<T>) => arrayOf.map((item, index) => render(item, index));
+export const Each = <T,>({ render, arrayOf }: EachProps<T>) => <>{arrayOf.map((item, index) => render(item, index))}</>;
 
 export default Each;

@@ -1,4 +1,5 @@
 import { Button, Input, Typography } from 'antd';
+import { memo } from 'react';
 
 function SectionGetInformation() {
   return (
@@ -14,4 +15,4 @@ function SectionGetInformation() {
   );
 }
 
-export default SectionGetInformation;
+export default memo(SectionGetInformation);

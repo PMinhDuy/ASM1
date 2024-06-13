@@ -7,8 +7,7 @@ import MainLayout from '../shared/hocs/MainLayout';
 import NewProductListComponent from '../features/product/components/NewProductList';
 import SaleProductListComponent from '../features/product/components/SaleProductList';
 import SectionBranch from '../shared/components/layout/SectionBranch';
-
-import { useGetPosts } from '#/shared/hooks/useGetPosts';
+import { useMemo } from 'react';
 
 const CONTENT_LAYOUT = [
   {
@@ -64,28 +63,30 @@ const CONTENT_LAYOUT = [
 ];
 
 export default function Page() {
-  const { data } = useGetPosts();
-  console.log(data);
+  const renderContentLayout = useMemo(
+    () =>
+      CONTENT_LAYOUT.map((item, index) => (
+        <ContentLayout
+          key={index}
+          title={item.title}
+          childrenComponent={item.childrenComponent}
+          className={{
+            titleColor: item.className.titleColor,
+            backgroundColor: item.className.backgroundColor,
+            backgroundButtonColor: item.className.backgroundButtonColor,
+          }}
+          showButton={item.showButton}
+          showSidebar={item.showSidebar}
+        />
+      )),
+    []
+  );
   return (
     <>
       <MainLayout>
         <>
           <BannerLayout />
-
-          {CONTENT_LAYOUT.map((item, index) => (
-            <ContentLayout
-              key={index}
-              title={item.title}
-              childrenComponent={item.childrenComponent}
-              className={{
-                titleColor: item.className.titleColor,
-                backgroundColor: item.className.backgroundColor,
-                backgroundButtonColor: item.className.backgroundButtonColor,
-              }}
-              showButton={item.showButton}
-              showSidebar={item.showSidebar}
-            />
-          ))}
+          {renderContentLayout}
           <SectionBranch />
         </>
       </MainLayout>

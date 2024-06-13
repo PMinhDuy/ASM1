@@ -1,10 +1,12 @@
 import { CHAT_HASH, PATH_URL } from '../../../ultils/constant';
 import { MessageFilled, ShoppingOutlined, UserOutlined } from '@ant-design/icons';
-import ChatModal from '../../../../features/chats/ChatModal';
 import { Divider } from 'antd';
 import HeaderSearchInput from './HeaderSearchInput';
 import Logo from '../../common/Logo';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
+const ChatModal = React.lazy(async () => await import('../../../../features/chats/ChatModal'));
 
 export default function HeaderLayout() {
   const navigate = useNavigate();

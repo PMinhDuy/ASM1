@@ -1,6 +1,6 @@
 import { Button, Col, Row, Typography } from 'antd';
 import { DoubleLeftOutlined, DoubleRightOutlined } from '@ant-design/icons';
-import { type ReactNode, Suspense, useState } from 'react';
+import { type ReactNode, Suspense, memo, useState } from 'react';
 
 interface ContentLayoutInterface {
   title?: string;
@@ -98,4 +98,4 @@ function ContentLayout({
   );
 }
 
-export default ContentLayout;
+export default memo(ContentLayout);

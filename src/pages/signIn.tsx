@@ -1,10 +1,14 @@
+import React, { Suspense } from 'react';
 import MainLayout from '../shared/hocs/MainLayout';
-import SignInForm from '../features/authentication/components/SignInForm';
+
+const SignInForm = React.lazy(async () => await import('../features/authentication/components/SignInForm'));
 
 function SignIn() {
   return (
     <MainLayout>
-      <SignInForm />
+      <Suspense fallback={<div>...Loading</div>}>
+        <SignInForm />
+      </Suspense>
     </MainLayout>
   );
 }

@@ -4,6 +4,7 @@ import Banner2 from '../../../assets/images/banner2.jpg';
 import Banner3 from '../../../assets/images/banner3.jpg';
 import Each from '../common/Each';
 import { ShoppingCartOutlined } from '@ant-design/icons';
+import { memo } from 'react';
 
 const DataBanners = [
   {
@@ -52,4 +53,4 @@ function BannerLayout() {
   );
 }
 
-export default BannerLayout;
+export default memo(BannerLayout);

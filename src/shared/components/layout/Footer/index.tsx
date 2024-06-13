@@ -1,6 +1,7 @@
 import { ClockCircleFilled, EnvironmentFilled, PhoneFilled } from '@ant-design/icons';
 import FooterInformationContainer from './FooterInformationContainer';
 import Logo from '../../common/Logo';
+import { memo } from 'react';
 
 const SHOP_INFORMATION = [
   {
@@ -35,4 +36,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default memo(Footer);

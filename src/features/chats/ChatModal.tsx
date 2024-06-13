@@ -3,6 +3,7 @@ import ChatBody from './ChatBody';
 import ChatFooter from './ChatFooter';
 import ChatHeader from './ChatHeader';
 import { Drawer } from 'antd';
+import { memo } from 'react';
 import { useLocation } from 'react-router-dom';
 
 function ChatModal() {
@@ -24,4 +25,4 @@ function ChatModal() {
   );
 }
 
-export default ChatModal;
+export default memo(ChatModal);

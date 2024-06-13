@@ -1,5 +1,6 @@
 import { CaretDownFilled, PhoneOutlined } from '@ant-design/icons';
 import { Divider, Dropdown, Typography } from 'antd';
+import { memo } from 'react';
 
 const SideBarInformation = [
   {
@@ -92,4 +93,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default memo(NavBar);

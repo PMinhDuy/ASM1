@@ -1,4 +1,5 @@
 import { Col, Image, Row } from 'antd';
+import { memo } from 'react';
 
 function SectionBranch() {
   return (
@@ -49,4 +50,4 @@ function SectionBranch() {
   );
 }
 
-export default SectionBranch;
+export default memo(SectionBranch);

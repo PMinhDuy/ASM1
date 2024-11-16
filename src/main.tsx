@@ -1,10 +1,11 @@
 import './index.css';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import { I18nextProvider, useTranslation } from 'react-i18next';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { ErrorBoundary } from 'react-error-boundary';
+import { client } from './graphql/client';
 import { HelmetProvider } from 'react-helmet-async';
+import { ErrorBoundary } from 'react-error-boundary';
 import { MainErrorFallback } from './shared/components/errors/main';
 import { QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
@@ -37,11 +38,6 @@ const Main = () => {
     </ErrorBoundary>
   );
 };
-
-const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql',
-  cache: new InMemoryCache(),
-});
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
 root.render(

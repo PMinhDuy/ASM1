@@ -1,6 +1,8 @@
 import { Button, Col, Row, Typography } from 'antd';
 import { DoubleLeftOutlined, DoubleRightOutlined } from '@ant-design/icons';
 import { type ReactNode, Suspense, memo, useState } from 'react';
+import { generatePath, useNavigate } from 'react-router-dom';
+import { PATH_URL } from '#/shared/ultils/constant';
 
 interface ContentLayoutInterface {
   title?: string;
@@ -9,8 +11,10 @@ interface ContentLayoutInterface {
     productNameColor?: string;
     titleColor?: string;
     backgroundButtonColor?: string;
+    buttonTextColor?: string;
   };
-  childrenComponent?: ReactNode;
+  children?: ReactNode;
+  id: string;
   showButton?: boolean;
   showSidebar?: boolean;
 }
@@ -38,14 +42,20 @@ const CONTENT_SIDEBAR = [
   },
 ];
 
-function ContentLayout({
+function CategoryLayout({
   title,
   className,
-  childrenComponent,
+  children,
   showButton = true,
   showSidebar = true,
+  id,
 }: ContentLayoutInterface) {
   const [selectedId, setSelectedId] = useState(0);
+  const navigate = useNavigate();
+
+  const onViewDetailCategory = (id: string) => {
+    navigate(generatePath(PATH_URL.category, { id }));
+  };
 
   return (
     <div className={`flex flex-col justify-between ${className?.backgroundColor} px-[200px] py-[50px]`}>
@@ -84,11 +94,14 @@ function ContentLayout({
           </div>
         )}
       </div>
-      <Suspense fallback={<div>Loading....</div>}>{childrenComponent}</Suspense>
+      <Suspense fallback={<div>Loading....</div>}>{children}</Suspense>
       {showButton && (
         <div className="flex justify-center pt-[50px]">
           <Button
-            className={`px-[70px] py-[25px] text-lg text-white font-bold flex justify-center items-center ${className?.backgroundButtonColor}`}
+            className={`px-[70px] py-[25px] text-lg font-bold flex justify-center items-center ${className?.backgroundButtonColor} ${className?.buttonTextColor}`}
+            onClick={() => {
+              onViewDetailCategory(id);
+            }}
           >
             Xem tất cả
           </Button>
@@ -98,4 +111,4 @@ function ContentLayout({
   );
 }
 
-export default memo(ContentLayout);
+export default memo(CategoryLayout);

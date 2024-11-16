@@ -7,7 +7,7 @@ module.exports = {
       colors: {
         'primary-green-color': '#1c5b41',
         'primary-yellow-color': '#FE9614',
-        'dark-title': '#070632'
+        'dark-title': '#070632',
       },
     },
   },

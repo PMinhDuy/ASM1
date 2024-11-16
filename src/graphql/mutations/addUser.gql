@@ -1,0 +1,7 @@
+mutation addUser($input: CreateUserDto!) {
+  addUser(data: $input) {
+    id
+    name
+    avatar
+  }
+}

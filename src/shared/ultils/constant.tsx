@@ -1,8 +1,9 @@
 export const PATH_URL = {
-  dashBoard: '/',
-  user: '/users',
-  signIn: '/signIn',
-  signUp: '/signUp',
+  home: '/',
+  user: '/user',
+  login: '/login',
+  register: '/register',
+  category: '/category/:id',
 };
 
 export const CHAT_HASH = '#message';
